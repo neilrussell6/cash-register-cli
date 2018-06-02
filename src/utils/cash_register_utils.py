@@ -1,4 +1,4 @@
-"""Cash Reigister utility functions."""
+"""Cash Register utility functions."""
 
 from src.models import ReceiptItem
 
