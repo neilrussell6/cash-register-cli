@@ -35,4 +35,3 @@ six==1.11.0               # via faker, flake8-print, more-itertools, pytest, pyt
 termcolor==1.1.0          # via pytest-sugar
 testfixtures==6.0.2       # via flake8-isort
 text-unidecode==1.2       # via faker
-toolz==0.9.0

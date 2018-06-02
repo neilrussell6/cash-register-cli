@@ -18,6 +18,3 @@ pep8-naming
 flake8-print
 flake8-todo
 flake8-isort
-
-# util
-toolz
