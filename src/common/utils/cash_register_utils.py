@@ -1,11 +1,11 @@
 """Cash Register utility functions."""
 
-from src.models import ReceiptItem
+from src.common.models import ReceiptItem
 
 
 def build_receipt(quantities, inventory):
     return tuple(
-        ReceiptItem(v, inventory[k].label, inventory[k].unitprice)
+        ReceiptItem(v, inventory[k].label, inventory[k].unitprice * v)
         for k, v in quantities.items()
     )
 

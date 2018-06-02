@@ -1,8 +1,9 @@
 """Unit tests for Cash Register utility functions."""
+
 import pytest
 
-from src.models import InventoryItem, ReceiptItem
-from src.utils.cash_register_utils import (
+from src.common.models import InventoryItem, ReceiptItem
+from src.common.utils.cash_register_utils import (
     _calculate_denoms,
     build_receipt,
     calculate_change,
@@ -25,8 +26,8 @@ def test_build_receipt_builds_as_expected():
 
     # then ... should build expected receipt
     assert result == (
-        ReceiptItem(3, 'Black Coffee', 2500),
-        ReceiptItem(2, 'Fancy Tea', 1750),
+        ReceiptItem(3, 'Black Coffee', 7500),
+        ReceiptItem(2, 'Fancy Tea', 3500),
     )
 
 

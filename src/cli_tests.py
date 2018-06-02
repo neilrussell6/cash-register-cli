@@ -2,9 +2,9 @@
 
 from click.testing import CliRunner
 
-from src import data
 from src.cli import bill
-from src.models import InventoryItem
+from src.common import data
+from src.common.models import InventoryItem
 
 
 def test_bill_command_runs(monkeypatch):
