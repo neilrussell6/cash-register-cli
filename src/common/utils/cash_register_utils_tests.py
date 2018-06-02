@@ -7,7 +7,7 @@ from src.common.utils.cash_register_utils import (
     _calculate_denoms,
     build_receipt,
     calculate_change,
-    calculate_total,
+    calculate_receipt_total,
 )
 
 
@@ -48,11 +48,11 @@ def test_build_receipt_builds_as_expected():
         11000,
     ),
 ))
-def test_calculate_total_returns_expected_result(receipt, expected):
+def test_calculate_receipt_total_returns_expected_result(receipt, expected):
     """Should calculate total as expected for provided receipt."""
 
     # when ... we calculate total with the provided receipt
-    result = calculate_total(receipt)
+    result = calculate_receipt_total(receipt)
 
     # then ... should calculate expected total
     assert result == expected

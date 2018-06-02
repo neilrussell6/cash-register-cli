@@ -6,7 +6,7 @@ import click
 
 from src.common import data
 from src.common.data import print_tpl_receipt_item_qty_label
-from src.common.utils.cash_register_utils import build_receipt, calculate_change, calculate_total
+from src.common.utils.cash_register_utils import build_receipt, calculate_change, calculate_receipt_total
 from src.common.utils.money_utils import format_money
 from src.common.utils.print_utils import format_bill_heading, format_receipt
 
@@ -27,7 +27,7 @@ def new_bill(bill_id=None):
     receipt = build_receipt(quantities, data.inventory)
 
     # total
-    total_due = calculate_total(receipt)
+    total_due = calculate_receipt_total(receipt)
     click.echo('amount due is {}'.format(format_money(total_due)))
 
     # amount received

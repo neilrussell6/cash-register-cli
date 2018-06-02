@@ -6,6 +6,7 @@ from src.common.utils.money_utils import format_money
 
 
 def format_bill_heading(id):
+    """Format Bill heading for printing."""
     return (
         data.print_tpl_heading.format(f' BILL {id} '),
         '-' * 35,
@@ -13,6 +14,7 @@ def format_bill_heading(id):
 
 
 def format_receipt(receipt, total_due, amount_received, change_total):
+    """Format provided receipt for printing."""
     formatted_receipt = (
         print_tpl_receipt_item.format(
             print_tpl_receipt_item_qty_label.format(n.quantity, n.label),
