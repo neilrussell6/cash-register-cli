@@ -34,8 +34,15 @@ def bill(**kwargs):
     quantities = defaultdict(int)
 
     while add_bill:
-        click.echo('============= BILL {} ============='.format(bill_id))
-        click.echo(datetime.utcnow())
+        # templates
+        heading_tpl = '{:=^35}'
+        subheading_tpl = '{: ^35}'
+        receipt_item_tpl = '{:<20} {}'
+        receipt_item_qty_label_tpl = '{} x {}'
+
+        click.echo(heading_tpl.format(f' BILL {bill_id} '))
+        click.echo(subheading_tpl.format(f' {datetime.utcnow()} '))
+        click.echo('-' * 35)
 
         while add_item:
             # new item
@@ -60,10 +67,6 @@ def bill(**kwargs):
 
         # amount received
         amount_received = int(click.prompt('amount received', type=float) * 100)
-
-        # templates
-        receipt_item_tpl = '{:<20} {}'
-        receipt_item_qty_label_tpl = '{} x {}'
 
         # change
         change = calculate_change(total_due, amount_received, data.denominations)
